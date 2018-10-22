@@ -1,0 +1,17 @@
+title Tehtava 0.4
+
+kayttaja->selain: Käyttäjä kirjoittaa tekstikenttään jotain
+kayttaja->selain: Käyttäjä painaa tallenna-nappia
+selain->palvelin: POST https://fullstack-exampleapp.herokuapp.com/new_note
+palvelin->selain: STATUS 302, uudelleenohjaus
+selain->palvelin: GET https://fullstack-exampleapp.herokuapp.com/notes
+palvelin->selain: STATUS 200, sivun HTML
+selain->palvelin: GET https://fullstack-exampleapp.herokuapp.com/main.css
+palvelin->selain: STATUS 200, sivun CSS
+selain->palvelin: GET https://fullstack-exampleapp.herokuapp.com/main.js
+palvelin->selain: STATUS 200, sivun JS
+selain->palvelin: GET https://fullstack-exampleapp.herokuapp.com/data.json
+palvelin->selain: STATUS 200, sivun JSON
+note left of selain
+ Selain näyttää käyttäjälle palvelimelta haetun HTML-sivun käyttäen saatuja css-, js- ja json- tiedostoja.
+end note

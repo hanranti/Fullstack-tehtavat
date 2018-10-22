@@ -1,0 +1,12 @@
+title Tehtava 0.6
+
+kayttaja->selain: Kayttaja kirjoittaa tekstikenttään jotain
+kayttaja->selain: Kayttaja painaa tallenna nappia
+selain->palvelin: POST https://fullstack-exampleapp.herokuapp.com/new_note_spa
+note right of palvelin
+ Palvelin tallentaa käyttäjän lähettämän tekstin
+end note
+palvelin->selain: STATUS 201, sivun HTML
+note left of selain
+ Selain lisää html:ään käyttäjän kirjoittaman tekstin
+end note
