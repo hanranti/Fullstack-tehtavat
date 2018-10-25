@@ -20,10 +20,8 @@ const Sisalto = ({ osat }) => {
     )
 }
 const Yhteensa = (props) => {
-    const [osa1, osa2, osa3] = props.kurssi.osat
-
     return (
-        <p>yhteensä {osa1.tehtavia + osa2.tehtavia + osa3.tehtavia} tehtävää</p>
+        <p>yhteensä {props.kurssi.osat.reduce((summa, uusia) => ({ tehtavia: summa.tehtavia + uusia.tehtavia })).tehtavia} tehtävää</p>
     )
 }
 
